@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/Searchable"
+    android:hint="@string/Searchable"
+    android:searchSuggestAuthority="com.yoavi.materialtest1.SearchableProvider"
+    android:searchSuggestSelection=" ?">
+
+</searchable>
