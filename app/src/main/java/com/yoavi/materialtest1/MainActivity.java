@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar my_toolbar =(Toolbar)findViewById(R.id.my_toolbar);
         setSupportActionBar(my_toolbar);
         getSupportActionBar().setTitle(R.string.my_title);
-        getSupportActionBar().setIcon(R.drawable.ic_toolbar);
         getSupportActionBar().setSubtitle(R.string.my_subtitle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

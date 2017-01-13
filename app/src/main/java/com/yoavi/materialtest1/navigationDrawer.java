@@ -31,12 +31,10 @@ public class navigationDrawer extends Fragment {
     private boolean mFromSavedInstanceSate;
     public static final String KEY_USER_LEARNED_DRAWER="user_learned_drawer";
     private View containerView;
-    private RecyclerView recyclerView;
-    private Adapter adapter;
-    private Context thiscontext;
+    private Context context;
 
     public navigationDrawer() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -52,26 +50,9 @@ public class navigationDrawer extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         View layout=inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        recyclerView = (RecyclerView) layout.findViewById(R.id.drawer_list);
-        adapter= new Adapter(getActivity(),getData());
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        return layout;
-    }
 
-    public static List<RowInfo> getData(){
-        List<RowInfo> data = new ArrayList<>();
-        int[] icons={R.drawable.ic_allmail,R.drawable.ic_bin,R.drawable.ic_sent,R.drawable.ic_spam};
-        String titles[]={"Asia","Europe","Australia","Africa"};
-        for (int i=0;i<icons.length&&i<titles.length;i++){
-            RowInfo current = new RowInfo();
-            current.resId=icons[i];
-            current.title=titles[i];
-            data.add(current);
-        }
-        return data;
+        return layout;
     }
 
     public void setUp(int fragment_id, DrawerLayout drawerlayout, final Toolbar toolbar) {

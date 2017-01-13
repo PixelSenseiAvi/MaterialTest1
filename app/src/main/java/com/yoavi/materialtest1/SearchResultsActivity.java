@@ -35,16 +35,5 @@ public class SearchResultsActivity extends AppCompatActivity {
             SearchRecentSuggestions searchRecentSuggestions = new SearchRecentSuggestions(this,SearchableProvider.AUTHORITY,SearchableProvider.MODE);
             searchRecentSuggestions.saveRecentQuery(query,null);
         }
-
-        String[] countries =getResources().getStringArray(R.array.countries);
-        ArrayList<String> search_results= new ArrayList<String>();
-        for(int i=0;i<countries.length;i++){
-            if(countries[i].toLowerCase().contains(query.toLowerCase())){
-                search_results.add(countries[i]);
-            }
-        }
-        ListView listView_search = (ListView) findViewById(R.id.listview_searchresults);
-        ArrayAdapter adapter = new ArrayAdapter(this,R.layout.simple_list_item_1,search_results);
-        listView_search.setAdapter(adapter);
     }
 }
